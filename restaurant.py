@@ -36,7 +36,7 @@ class Restaurant:
         order_time = self.waiters[w_id].serve_pizza(pizza, order_time)
 
         # Calculate the preparation time for the pizza
-        pizza.prep_time = order_time - time.time()
+        pizza.prep_time = time.time() - order_time
         return pizza
 
     def take_orders(self, orders):
@@ -57,7 +57,7 @@ class Restaurant:
         for pizza in pizzas:
             total_prep_time += pizza.prep_time
             # Print the preparation time for each pizza
-            print("Pizza", pizza.order_id, "prepared in", round(pizza.prep_time, 2), "seconds.")
+            print("Pizza", pizza.order_id, "prepared in", pizza.prep_time, "seconds.")
         # Print the total
 
 
